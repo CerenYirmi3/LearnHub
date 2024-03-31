@@ -1,9 +1,9 @@
 {
   "expo": {
     "name": "LearnHub",
-    "slug": "learnhub",
+    "slug": "LearnHub",
     "version": "1.0.0",
-    "scheme": "learnhub",
+    "scheme": "LearnHub",
     "orientation": "portrait",
     "icon": "./App/Assets/Images/icon2.png",
     "userInterfaceStyle": "light",

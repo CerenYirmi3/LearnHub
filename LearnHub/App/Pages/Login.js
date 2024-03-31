@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Colors from '../Shared/Colors'
 import { AntDesign } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
@@ -9,10 +9,40 @@ import * as Goggle from 'expo-auth-session/providers/google';
 export default function Login() {
 
   WebBrowser.maybeCompleteAuthSession();
+  const [accessToken, setAccessToken] = useState();
+  const [userInfo,setUserInfo]=useState();
   const [request, response, promtAsync] = Goggle.useAuthRequest({
     androidClientId: '767537161180-bk03aelqt8mmeb8e3e0n3cggmrob66b5.apps.googleusercontent.com',
-    expoClientId: '767537161180-f8hms69026inphfb7f5lg5cojdc7o7d2.apps.googleusercontent.com',
+    expoClientId: '767537161180-413rv4j1gnagukogqrnn898replos78p.apps.googleusercontent.com',
+    
   });
+
+  useEffect(()=>{
+    if(response?.type =='success')
+    {
+      setAccessToken(response.authentication.accessToken);
+      console.log(response.authentication.accessToken);
+      getUserData();
+    }
+  },[response])
+
+  const getUserData=async()=>{
+    try {
+        const resp = await fetch(
+          "https://www.googleapis.com/userinfo/v2/me",
+          {
+            headers: { Authorization: `Bearer ${response.authentication.accessToken}` },
+          }
+        );
+  
+        const user = await resp.json();
+        console.log("User Details = ",user) 
+        setUserInfo(user); 
+        setUserData(user);
+        await Services.setUserAuth(user);
+      } catch (error) {
+      }
+  }
 
   return (
     <View>
