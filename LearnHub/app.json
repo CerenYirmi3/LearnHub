@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "LearnHub",
-    "slug": "LearnHub",
+    "slug": "learnhub",
     "version": "1.0.0",
+    "scheme": "learnhub",
     "orientation": "portrait",
     "icon": "./App/Assets/Images/icon2.png",
     "userInterfaceStyle": "light",
@@ -21,10 +22,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.learnhub",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b0bf499c-4a1e-4095-85e0-307481565bd3"
+      }
     }
   }
 }
