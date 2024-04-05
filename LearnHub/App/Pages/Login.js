@@ -4,6 +4,7 @@ import Colors from '../Shared/Colors'
 import { AntDesign } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import * as Goggle from 'expo-auth-session/providers/google';
+import Services from '../Shared/Services';
 
 
 export default function Login() {
@@ -39,6 +40,7 @@ export default function Login() {
         console.log("User Details = ",user) 
         setUserInfo(user); 
         setUserData(user);
+        await Services.setUserAuth(user)
         await Services.setUserAuth(user);
       } catch (error) {
       }

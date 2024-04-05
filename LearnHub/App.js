@@ -4,22 +4,31 @@ import Login from './App/Pages/Login';
 import { AuthContext } from './App/Context/AuthContext';
 import { useEffect, useState } from 'react';
 import Home from './App/Pages/Home';
+import Services from './App/Shared/Services';
 
 export default function App() {
   
   const[userData, setUserData] = useState();
   useEffect(()=>{
-    //console.log()
+    Services.getUserAuth().then(resp => {
+      console.log(resp);
+      if(resp){
+        setUserData(resp)
+      }
+      else{
+        setUserData(null)
+      }
+    })
   })
   return (
     <View style={styles.container}>
-      <AuthContext.Provider value={{userData, setUserData}}>
+      {/* <AuthContext.Provider value={{userData, setUserData}}>
         {
           userData ? <Home/> : <Login/> //userData boş değilse Home'a boşsa Logine yölendir.
         }
         
         
-      </AuthContext.Provider>
+      </AuthContext.Provider> */}
 
     </View>
   );
