@@ -3,7 +3,6 @@
     "name": "LearnHub",
     "slug": "LearnHub",
     "version": "1.0.0",
-    "scheme": "LearnHub",
     "orientation": "portrait",
     "icon": "./App/Assets/Images/icon2.png",
     "userInterfaceStyle": "light",
@@ -16,15 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.cerenaydin.learnhub",
+      "supportsTablet": true,
+      "infoPlist":{
+          "CFBunleURLTypes":[
+            {
+              "CFBunleURLSchemes": [
+                "com.googleusercontent.apps.767537161180-81251ira77vqr9ibesv9hvjr41or90o8"
+              ]
+            }
+          ]
+      }
     },
     "android": {
+      "package": "com.cerenaydin.learnhub",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.learnhub",
-      "versionCode": 1
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

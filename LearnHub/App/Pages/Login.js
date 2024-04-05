@@ -14,7 +14,6 @@ export default function Login() {
   const [request, response, promtAsync] = Goggle.useAuthRequest({
     androidClientId: '767537161180-bk03aelqt8mmeb8e3e0n3cggmrob66b5.apps.googleusercontent.com',
     expoClientId: '767537161180-413rv4j1gnagukogqrnn898replos78p.apps.googleusercontent.com',
-    
   });
 
   useEffect(()=>{
