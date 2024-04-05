@@ -10,7 +10,12 @@ const getUserAuth=async()=>{
    return JSON.parse(value)
 }
 
+const Logout=()=>{
+    AsyncStorage.clear();
+}
+
 export default{
     setUserAuth,
-    getUserAuth
+    getUserAuth,
+    Logout,
 }

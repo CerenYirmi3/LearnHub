@@ -29,7 +29,7 @@ export default function App() {
         
         
       </AuthContext.Provider> */}
-
+      <Home/>
     </View>
   );
 }
