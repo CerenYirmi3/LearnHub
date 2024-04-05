@@ -5,6 +5,10 @@ import { AuthContext } from './App/Context/AuthContext';
 import { useEffect, useState } from 'react';
 import Home from './App/Pages/Home';
 import Services from './App/Shared/Services';
+import Colors from './App/Shared/Colors';
+
+//yorum satırları google proglemi çözüldüğü zaman kaldırılacaktır.
+
 
 export default function App() {
   
@@ -29,7 +33,7 @@ export default function App() {
         
         
       </AuthContext.Provider> */}
-      <Home/>
+      <Login/>
     </View>
   );
 }
@@ -37,9 +41,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: Colors.bgColor,
   },
   subContainer: {
     backgroundColor: "black",

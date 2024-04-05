@@ -6,10 +6,11 @@ import * as WebBrowser from 'expo-web-browser';
 import * as Goggle from 'expo-auth-session/providers/google';
 import Services from '../Shared/Services';
 
+//yorum satırları google proglemi çözüldüğü zaman kaldırılacaktır.
 
 export default function Login() {
 
-  WebBrowser.maybeCompleteAuthSession();
+ /* WebBrowser.maybeCompleteAuthSession();
   const [accessToken, setAccessToken] = useState();
   const [userInfo,setUserInfo] = useState();
   const [userData, setUserData] = useContext();
@@ -44,11 +45,11 @@ export default function Login() {
         await Services.setUserAuth(user);
       } catch (error) {
       }
-  }
+  }*/
 
   return (
     <View>
-            <Image source={require('../Assets/Images/login.png')} style={styles.image}/>
+            <Image source={require('../Assets/Images/login.png')}/>
       <View style={styles.conteiner}>
             <Text style={styles.welcomeText}>LearnHub'a Hoş Geldiniz</Text>      
             <Text style={{textAlign:'center', marginTop:80, fontSize:20}}>Giriş Yap/Kayıt Ol</Text>
@@ -63,30 +64,26 @@ export default function Login() {
 } 
 
 const styles = StyleSheet.create({
-    conteiner:{
-        paddingTop:40,
-        top:'-16%',
-        marginTop:-20,
-        backgroundColor: '#fff',
-        borderTopRightRadius:20,
-        borderTopLeftRadius:20,
-    },
-    welcomeText:{
-        fontSize:35, 
-        textAlign:'center', 
-        fontWeight:'bold'
-    },
-    image:{
-        top:'-16%'
-    },
-    button:{
-      backgroundColor:Colors.primary,
-      padding:10,
-      margin:30,
-      display:'flex',
-      flexDirection:'row',
-      justifyContent:'center',
-      alignItems:'center',
-      borderRadius:10,
-    },
+  container:{
+    paddingTop:40,
+    marginTop:-25,
+    backgroundColor:'#fff',
+    borderTopRightRadius:30,
+    borderTopLeftRadius:30
+},
+welcomeText:{
+    fontSize:35,
+    textAlign:'center',
+    fontWeight:'bold' 
+},
+button:{
+    backgroundColor:Colors.primary,
+    padding:10,
+    margin:30,
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:10
+}
 })
