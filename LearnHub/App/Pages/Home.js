@@ -13,7 +13,7 @@ export default function Home() {
   //const{userData, setUserData} = useContext(AuthContext);
 
   return (
-    <View style={{padding:20}}>
+    <View style={{padding:20, paddingTop:50}}>
         {/**/<WelcomeHeader/>}
         <SearchBar/>
     </View>

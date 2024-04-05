@@ -10,10 +10,9 @@ export default function WelcomeHeader() {
     <View style={styles.container}>
 
         <View>
-            <Text style={styles.text}>Selam</Text>
-            {/*<Text>{userData?.name}</Text>*/
-            <Text style={styles.text}>kullanıcı</Text>} 
-            <Text>sa</Text>     
+            <Text>Selam</Text>
+            {/*<Text style={{fontSize:20, fontWeight:'bold'}}>{userData?.name}</Text>*/
+            <Text style={{fontSize:20, fontWeight:'bold'}}>Ceren Aydın</Text>}  
         </View>
 
         {/*<Image source={{uri:userData?.picture}} style={{width:40, height:40, borderRadius:100}}/>*/
@@ -29,10 +28,7 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',
-        alignItems:'center',
-    },
-    text:{
-        verticalAlign:'top'
+        alignItems:'center'
     }
 })
 

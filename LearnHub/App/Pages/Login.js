@@ -49,8 +49,8 @@ export default function Login() {
 
   return (
     <View>
-            <Image source={require('../Assets/Images/login.png')}/>
-      <View style={styles.conteiner}>
+      <Image source={require('../Assets/Images/login.png')}/>
+      <View style={styles.container}>
             <Text style={styles.welcomeText}>LearnHub'a Hoş Geldiniz</Text>      
             <Text style={{textAlign:'center', marginTop:80, fontSize:20}}>Giriş Yap/Kayıt Ol</Text>
             <TouchableOpacity style={styles.button} onPress={()=>promtAsync()}>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 welcomeText:{
     fontSize:35,
     textAlign:'center',
-    fontWeight:'bold' 
+    fontWeight:'bold',
 },
 button:{
     backgroundColor:Colors.primary,
