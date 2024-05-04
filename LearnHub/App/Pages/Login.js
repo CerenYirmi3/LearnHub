@@ -58,6 +58,7 @@ export default function Login() {
                 <AntDesign name="google" size={24} color="white" style={{marginRight:10}}/>
                 <Text style={{color:Colors.white}}>Google İle Kayıt Ol</Text>
             </TouchableOpacity>
+
       </View>
 
     </View>
