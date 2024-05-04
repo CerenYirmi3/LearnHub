@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, ActivityIndicator, Button } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput, ActivityIndicator, Button, KeyboardAvoidingView } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import Colors from '../Shared/Colors'
 import { AntDesign } from '@expo/vector-icons';
@@ -93,6 +93,7 @@ export default function Login() {
     <View>
       <Image source={require('../Assets/Images/login.png')}/>
       <View style={styles.container}>
+        <KeyboardAvoidingView behavior="padding">
             <Text style={styles.welcomeText}>LearnHub'a Hoş Geldiniz</Text>      
             <Text style={{textAlign:'center', marginTop:80, fontSize:20}}>Giriş Yap/Kayıt Ol</Text>
             <TextInput style={styles.email} placeholder='Email' autoCapitalize='none' onChangeText={(text) => setEmail(text)} value={email}></TextInput>
@@ -103,11 +104,13 @@ export default function Login() {
                 <Button title='Giriş Yap' onPress={signIn}/>
                 <Button title='Kayıt Ol' onPress={signUp}/>
               </>}
+        </KeyboardAvoidingView> 
 
             <TouchableOpacity style={styles.button}>
                 <AntDesign name="google" size={24} color="white" style={{marginRight:10}}/>
                 <Text style={{color:Colors.white}}>Google İle Kayıt Ol</Text>
             </TouchableOpacity>
+ 
       </View>
     </View>
   )
