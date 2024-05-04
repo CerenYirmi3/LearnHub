@@ -33,7 +33,7 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <NavigationContainer>
+      <NavigationContainer >
         <Stack.Navigator initialRouteName='Login'>
           <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
         </Stack.Navigator>
@@ -47,6 +47,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.bgColor
+    backgroundColor: Colors.white
   },
 });
