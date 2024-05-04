@@ -1,8 +1,9 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import Colors from '../Shared/Colors'
 import { AntDesign } from '@expo/vector-icons';
 import { FIREBASE_AUTH } from '../../FirebaseConfig';
+
 import * as WebBrowser from 'expo-web-browser';
 import * as Goggle from 'expo-auth-session/providers/google';
 import Services from '../Shared/Services';
@@ -62,38 +63,66 @@ export default function Login() {
       <View style={styles.container}>
             <Text style={styles.welcomeText}>LearnHub'a Hoş Geldiniz</Text>      
             <Text style={{textAlign:'center', marginTop:80, fontSize:20}}>Giriş Yap/Kayıt Ol</Text>
+            <TextInput style={styles.email} placeholder='Email' autoCapitalize='none' onChangeText={(text) => setEmail(text)} value={email}></TextInput>
+            <TextInput style={styles.password} placeholder='Password' autoCapitalize='none' onChangeText={(text) => setPassword(text)} value={password} secureTextEntry={true}></TextInput>
+            
+
+
+
+
+
+
             <TouchableOpacity style={styles.button}>
                 <AntDesign name="google" size={24} color="white" style={{marginRight:10}}/>
                 <Text style={{color:Colors.white}}>Google İle Kayıt Ol</Text>
             </TouchableOpacity>
-
       </View>
-
     </View>
   )
 } 
 
 const styles = StyleSheet.create({
   container:{
-    paddingTop:40,
-    marginTop:-25,
-    backgroundColor:'#fff',
-    borderTopRightRadius:30,
-    borderTopLeftRadius:30
-},
-welcomeText:{
-    fontSize:35,
-    textAlign:'center',
-    fontWeight:'bold',
-},
-button:{
-    backgroundColor:Colors.primary,
+      paddingTop:40,
+      marginTop:-25,
+      backgroundColor:'#fff',
+      borderTopRightRadius:30,
+      borderTopLeftRadius:30
+  },
+  welcomeText:{
+      fontSize:35,
+      textAlign:'center',
+      fontWeight:'bold' 
+  },
+  button:{
+      backgroundColor:Colors.primary,
+      padding:10,
+      margin:30,
+      display:'flex',
+      flexDirection:'row',
+      justifyContent:'center',
+      alignItems:'center',
+      borderRadius:10
+  },
+  email:{
+    borderColor:Colors.primary,
+    borderWidth:1,
+    borderRadius:10,
+    marginTop:20,
+    marginLeft:30,
+    marginRight:30,
     padding:10,
-    margin:30,
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'center',
-    alignItems:'center',
-    borderRadius:10
-}
+    backgroundColor:Colors.white
+  },
+  password:{
+    borderColor:Colors.primary,
+    borderWidth:1,
+    borderRadius:10,
+    marginTop:10,
+    marginLeft:30,
+    marginRight:30,
+    padding:10,
+    backgroundColor:Colors.white,
+
+  }
 })

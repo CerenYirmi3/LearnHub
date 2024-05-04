@@ -31,22 +31,22 @@ export default function App() {
 
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login'>
-        <Stack.Screen name='Login' component={Login}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Login'>
+          <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+
+    </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.bgColor,
+    backgroundColor: Colors.bgColor
   },
-  subContainer: {
-    backgroundColor: "black",
-    width: 100,
-    height: 200,
-  }
 });
