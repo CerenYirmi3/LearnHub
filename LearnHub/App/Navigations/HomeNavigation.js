@@ -7,6 +7,7 @@ import CourseChapter from '../Pages/CourseChapter';
 import PlayVideo from '../Pages/PlayVideo';
 
 const Stack = createNativeStackNavigator();
+
 export default function HomeNavigation() {
   return (
     <Stack.Navigator screenOptions={{headerShown:false}}>
